@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+      <script> 
+         function firstAlert() { 
+           alert("OUCH!");
+         } 
+         
+         function add(x, y) {
+        	 document.write("add : " + x + y + " <br>");
+         }
+         
+         function start(){
+        	 add(1, 2);
+
+        	 add("i love", " foodssss");
+         }
+         // making objects using constructor functions
+         function person(name, age){
+        	 this.name = name;
+        	 this.age = age;
+        	 this.yearsUntillRetire = years;
+         }
+         
+         var ben = new person("Benjamin", 14);
+         // making objects with object initializers 
+         benObj = {name:"Benjamin Tran", age:14};
+         dadObj = {name:"Thang Tran", age:63};
+         
+         function years(){
+        	 var numYears = 65 - this.age;
+        	 return numYears;
+         }
+         // way to make array
+         var bros = new Array("Ben", "Evan", "Nigel");
+         //bros.pop(); dont uncomment if u dont wanna lose Nigel
+         var string1 = bros.join(" ");
+         
+         var tanks = new Array(3);
+         
+         tanks[0] = "FV215b";
+         tanks[1] = "T110E5";
+         tanks[2] = "Conqueror";
+         
+         
+         //var name = prompt("Enter your name:", ""); i comment out because i have to 
+         // write name in every time i refresh
+         function hiEveryTenSec(){
+        	 document.write("hi");
+         }
+         
+         function timeRefreshed(){
+        	 var now = new Date();
+        	 var hours = now.getHours();
+        	 var mins = now.getMinutes();
+        	 var secs = now.getSeconds();
+        	 document.write(hours + ":" + mins + " " + secs + "<br>");
+         }
+         
+         function startTime() {
+        	  var today = new Date();
+        	  var h = today.getHours();
+        	  var m = today.getMinutes();
+        	  var s = today.getSeconds();
+        	  m = checkTime(m);
+        	  s = checkTime(s);
+        	  document.getElementById('txt').innerHTML =
+        	  h + ":" + m + ":" + s;
+        	  var t = setTimeout(startTime, 500);
+        	}
+         
+         function checkTime(i) {
+        	  if (i < 10) {i = "0" + i};  //add zero in front of numbers < 10
+        	  return i;
+        	}
+         
+         
+      </script> 
+      
+      <script>
+      
+      
+      //setInterval("hiEveryTenSec()" , 1000);
+      //document.write("Hello " + name + "<br>");
+      var tired = false;
+      if(tired){
+    	  document.write("Ben is tired of nub teams<br>");
+      }else{
+    	  document.write("always will be<br>");
+      }
+      // this tells date by comparing cases, 0 to 6
+      switch (new Date().getDay()) {
+      case 0:
+        day = "Sunday";
+        break;
+      case 1:
+        day = "Monday";
+        break;
+      case 2:
+         day = "Tuesday";
+        break;
+      case 3:
+        day = "Wednesday";
+        break;
+      case 4:
+        day = "Thursday";
+        break;
+      case 5:
+        day = "Friday";
+        break;
+      case 6:
+        day = "Saturday";
+    }
+      
+      document.write("Today is " + day + "<br>");
+      console.log("This is to write in the console, the other document.write is for your page")
+      document.write("You refreshed this page at ");
+      timeRefreshed(); 
+      document.write("My favorite tank I own is the " + tanks[0] + "<br>");
+      document.write(string1 + "<br>");
+      document.write("we are the " + bros.length + " bros<br>")
+      document.write(ben.yearsUntillRetire() + " years untill ben retires <br>");
+      document.write("Name : " + ben.name + ", Age : " + ben.age + "<br>");
+      
+      
+      
+      var ben = "cool";
+      
+      if(ben == "cool"){
+    	  document.write("ben is cool :D<br>");
+      } else{
+    	  document.write("ben is not cool :(<br>")
+      }
+      
+document.write("hello this is how you print in js <br>");
+document.write(benObj.name + " looks up to " + dadObj.name + " because he is smart<br>");
+//exact same comments as java
+var x = 23;
+var y = 24;
+var z = x + y;
+
+var statement = "hello this is like string in java";
+
+document.write(" var z : " + z + "<br>");
+document.write(" statement : " + statement + "<br>");
+
+start();
+var wneight = 3300;
+var wnseven = "1700";
+document.write("My wn8 is " + wneight.toString() + "and my wn7 is " + Number(wnseven));
+</script>
+</head> 
+<body onload="startTime()">
+<h2>My First JavaScript</h2>
+
+<button onclick="window.print()">Print this page</button>
+<br>
+
+<a href="https://www.blitzstars.com/player/com/MarshalFluffs_" onMouseOut="alert('bro come back check ur stats');">
+Stats!</a>
+<br>
+<input type="button" value="please dont hit me" onclick="firstAlert()">
+
+
+<p id="grow">This can grow</p>
+
+<button type="button" onclick="document.getElementById('grow').style.fontSize='35px'">Enlarge</button>
+
+<p id="demo"> </p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = " "'>Press to clear time</button>
+<br>
+<br>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+somrthing1234
+<p id="demo"></p>
+
+</body>
+</html> 

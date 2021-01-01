@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript addEventListener()</h2>
+
+<p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+<p>When you need parameters in a function for a button, use callback functions</p>
+
+
+
+<button id="myBtn">Try it</button>
+
+<button onclick="removeHandler()" id="removeBtn"> Remove handlers </button>
+
+<p id="demo"></p>
+
+<p id="stretch"></p>
+
+<p id="scroll"></p>
+
+/*
+    	https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+    	0 = Unsent, client created but not called yet 
+    	1 = Opened, open() has been called
+    	2 = headers_received, send() has been called, headers and status are avaliable
+    	3 = loading, downloading responseText holds prtial data
+    	4 = done, operation complete
+    	*/
+
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("mouseover", myFunction);
+x.addEventListener("click", mySecondFunction);
+x.addEventListener("mouseout", myThirdFunction);
+x.addEventListener("keypress", keypressed);
+
+function removeHandler() {
+	document.getElementById("myBtn").removeEventListener("mouseover", myFunction);
+	document.getElementById("myBtn").removeEventListener("click", mySecondFunction);
+	document.getElementById("myBtn").removeEventListener("mouseout", myThirdFunction);
+	document.getElementById("myBtn").removeEventListener("keypress", keypressed);	
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML += "Moused over!<br>";
+}
+
+function mySecondFunction() {
+  document.getElementById("demo").innerHTML += "Clicked!<br>";
+}
+
+function myThirdFunction() {
+  document.getElementById("demo").innerHTML += "Moused out!<br>";
+}
+
+function keypressed(){
+  document.getElementById("demo").innerHTML += "Key pressed!<br>";
+}
+
+window.addEventListener("resize", function(){
+	  document.getElementById("stretch").innerHTML = "Resizing : " + Math.random();
+	});
+	
+window.addEventListener("scroll", function(){
+	  document.getElementById("scroll").innerHTML = "Scrolling : " + Math.random();
+	});
+	
+	
+
+
+</script>
+
+</body>
+</html>
